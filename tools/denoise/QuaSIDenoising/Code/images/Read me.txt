@@ -1,0 +1,3 @@
+These images can be found on the website https://www5.cs.fau.de/research/software/idaa/
+Reference: Markus A. Mayer, Anja Borsdorf, Martin Wagner, Joachim Hornegger, Christian Y. Mardin, and Ralf P. Tornow: 
+"Wavelet denoising of multiframe optical coherence tomography data", Biomedical Optics Express, 2012 (accepted, to appear) 1) 

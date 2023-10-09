@@ -1,0 +1,38 @@
+## DOSY Toolbox data file
+#Title                        	       		Name of your data
+#Spectrometer/Data System       	     	e.g. Varian Inova
+#Data Origin					iNMR
+#Data Type                           		DOSY
+#Data Class			     		Spectrum (or FID)
+#DOSY Toolbox format version        		0.1
+#Observe Frequency (MHz)
+#Observe Nucleus				e.g. 1H
+#Spectral Width (Hz)
+#Complex points per FID
+#Acquisition Time (s)
+#Right Phase (Zeroth order /degree)
+#Left Phase  (Phase at extreme left /degree) 
+#Start (lowest) Frequency (Hz)
+#Pulse sequence (optional)
+#Pulse sequence type				Unipolar, Bipolar or Other
+#Tau (required for Bipolar)
+#Dosytimecubed (required for Other)
+#Diffusion delay (DELTA /s)             	e.g. 0.100
+#Gradient encoding time (delta /s)		e.g. 0.001
+#Gradient shape					Rectangular, Sine or Other
+#Gradient shape factor (required for Other)
+#Number of arrays                               1
+#First array type                               gradient amplitude
+#First array unit                               T m-1
+#Fist array size                                e.g. 3 
+#First array values                              
+1.000e001
+2.000e001
+3.000e001
+#FID Data
+## Compled FID as Re Im Re Im etc.
+## Data nested as first array, second array etc.
+Re Im
+Re Im
+Re Im
+

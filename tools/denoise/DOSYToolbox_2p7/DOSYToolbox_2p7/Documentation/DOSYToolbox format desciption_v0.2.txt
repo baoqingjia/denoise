@@ -1,0 +1,178 @@
+﻿DOSY Toolbox file format description. Version 0.1 - 16 February 2010
+
+An example file is given at the end of this document.
+
+
+Lines starting with # contains a parameter
+Lines starting with ## is for comments and sections
+The following sections are currently supported
+## ************ File and Data Information 
+## ************ Matrix Format
+## ************ Acquisition Parameters 
+## ************ Processing parameters 
+## ************ Diffusion Parameters 
+## ************ Arrays 
+## ************ Miscellanea 
+
+The parameters within each section are in alphabetical order
+Each parameter line MUST contain
+1. The parameter names, each word capitalised
+2. A parenthesis with information about the data
+Example
+#Points Per Row (integer ; no unit ; e.g. number of complex point in a FID) 		16384  
+
+The parenthesis contains format specifier (mandatory) , unit (optional)  and comment (optional), separated with semicolons
+
+The supported format specifiers are: 'double', 'integer', 'string' and 'null'. A value for the parameter must be given after the closing parenthesis, except for when the format specifier is 'null'. String parameters are encliosed with double inverted comma (“)
+
+IF (and only if) the parameter is an array the the line must contain, just before the parenthesis, square brackets enclosing the number of array elements. The the array values comes each on a separate line
+Example:
+#Gradient Amplitude [3] (double data 1 ; T m^-1)			 
+3.030000e-02  
+5.874160e-02  
+7.735590e-02  
+
+IF the array corresponds to a number of FID the format specifier should contain 'data X' where x is the nest level, as in the example above.
+
+
+Floating point number should be given in scientific format.
+
+
+The data points are given one (real or complex) data point per line
+#Data Points [491520] (double)				 
+Re Im
+Re Im
+
+or
+
+Re
+Re
+
+
+
+The following field are mandatory:
+
+#DOSY Toolbox Format Version (string) 				 0.1  
+#Data Type (string) 						 DOSY data  
+#Data Class (string) 						 Spectra  
+#Complex Data (string)						 No  
+#Binary File Name (null)						  
+#Observe Nucleus (string) 					 1H  
+#Observe Frequency (double ; MHz) 				 3.999603e+02  
+#Acquisition Time (double; s) 					 2.048000e+00  
+#Points Per Row (integer) 					 16384  
+#Spectral Width (double ; ppm) 					 1.000099e+01  
+#Lowest Frequency (double ; ppm)				 	-2.802403e+00  
+#Number Of Arrays (integer)					 1  
+
+
+
+
+
+
+The following fields are recommended.
+#Title (string) 							 PropPentSuc_DOSY.fid 
+#Date (string) 							 21-Jan-2010 09:35:20 
+#DOSY Toolbox Version (string) 					 DOSY Toolbox development version (stable is 0.7)  
+#Data Origin (string) 						 DOSY Toolbox  
+#Spectrometer/Data System (string)				 Varian  
+#Pulse Sequence Name (string) 					 Unknown
+#Right Phase (double; degree; Zeroth order) 			 0.000000e+00  
+#Left Phase (double; degree; First order) 				 0.000000e+00  
+#Fourier Number (integer) 					 16384  
+
+IF DOSY data the following parameters are mandatory:
+
+#Dosygamma (double) 						 2.675246e+08  
+#Diffusion Delay (double ; s ; DELTA) 				 3.000000e-01  
+#Diffusion Encoding Time (double ; s ; delta) 			 3.000000e-03  
+#Gradient Shape (string) 						 Square  
+#Y Label (null)						
+#Y Axis Definition (string)					 Gradient Amplitude  
+#Gradient Amplitude [30] (double data 1 ; T m^-1)			 
+#Pulse Sequence Type (string)					 Other  
+	IF 'Other'	
+#Dosytimecubed (double) 					 2.675980e-06  
+	IF 'Bipolar' 	
+#Tau (null)					   
+
+
+  ## ************ File and Data Information **********************  
+#Binary File Name (null)						  
+#Data Class (string) 						 "FID"  
+#Complex Data (string)						 "Yes"  
+#Data Origin (string) 						 "DOSY Toolbox"  
+#Data Type (string) 						 "DOSY data"  
+#Date (string) 							 "16-Feb-2010 09:24:20" 
+#DOSY Toolbox Format Version (string) 				 0.1  
+#DOSY Toolbox Version (string) 					 "DOSY Toolbox development version (stable is 0.7)"  
+#Number Of Arrays (integer)					 1  
+#Spectrometer/Data System (string)				 "Varian"  
+#Title (string) 							 "PropPentSuc_DOSY.fid" 
+## ************ Matrix Format **********************************  
+#Complex Data (string)						 "Yes"  
+#Number Of Rows (integer) 					 30  
+#Points Per Row (integer) 					 8192  
+#Y Axis Definition (string)					 "Gradient Amplitude"  
+#Y Label (null)						   
+## ************ Acquisition Parameters *************************  
+#Acquisition Time (double; s) 					 2.048000e+00  
+#Complex Points Acquired (integer) 				 8192  
+#Lowest Frequency (double ; ppm)					 -2.802403e+00  
+#Observe Frequency (double ; MHz) 				 3.999603e+02  
+#Observe Nucleus (string) 					 "1-H"  
+#Spectral Width (double ; ppm) 					 1.000099e+01  
+#Pulse Sequence Name (string) 					 "Unknown"  
+## ************ Processing parameters ***************************  
+#Fourier Number (integer) 					 8192  
+#Left Phase (double; degree; First order) 				 4.612406e+01  
+#Right Phase (double; degree; Zeroth order) 			 -8.047060e+00  
+## ************ Diffusion Parameters ****************************  
+#Diffusion Delay (double ; s ; DELTA) 				 3.000000e-01  
+#Diffusion Encoding Time (double ; s ; delta) 			 3.000000e-03  
+#Dosygamma (double) 						 2.675246e+08  
+#Dosytimecubed (double) 					 2.675980e-06  
+#Gradient Shape (string) 						 "Square"  
+#Pulse Sequence Type (string)					 "Other"  
+#Tau (null)					   
+## ************ Arrays *****************************************  
+#Gradient Amplitude [30] (double data 1 ; T m^-1)			 
+3.030000e-02  
+5.874160e-02  
+7.735590e-02  
+9.228370e-02  
+1.051107e-01  
+1.165439e-01  
+1.269368e-01  
+1.365520e-01  
+1.455309e-01  
+1.539846e-01  
+1.620040e-01  
+1.696396e-01  
+1.769419e-01  
+1.839614e-01  
+1.907183e-01  
+1.972530e-01  
+2.035655e-01  
+2.096962e-01  
+2.156552e-01  
+2.214425e-01  
+2.270884e-01  
+2.326030e-01  
+2.379863e-01  
+2.432484e-01  
+2.483994e-01  
+2.534494e-01  
+2.583984e-01  
+2.632464e-01  
+2.680136e-01  
+2.727000e-01  
+## ************ Actual Data Points *****************************  
+#Data Points [245760] (double)				 
+3.520094e+06 1.072588e+06  
+2.286127e+06 -6.268610e+05  
+-9.842930e+05 -4.138690e+05  
+-1.966067e+06 7.740580e+05  
+
+
+.
